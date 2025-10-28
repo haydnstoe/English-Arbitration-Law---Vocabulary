@@ -25,7 +25,6 @@
 </head>
 <body>
   <h1>English Arbitration Law - Vocabulary</h1>
-  <p class="intro">Choose the best legal/dictionary meaning for each term. Three options per question are shuffled on load. Immediate feedback appears after your selection.</p>
 
   <form id="quiz" onsubmit="return false;" autocomplete="off">
     <!-- 1 -->
@@ -388,7 +387,6 @@
         }
       }
 
-      // Build quiz: for each question create shuffled radio options (3 per question)
       function build() {
         const qEls = Array.from(document.querySelectorAll('.question'));
         qEls.forEach((qEl, idx) => {
@@ -397,7 +395,6 @@
           const feedback = qEl.querySelector('.feedback');
           container.innerHTML = '';
 
-          // Copy choices and shuffle
           const choices = data.choices.map(c => ({ ...c }));
           shuffle(choices);
 
@@ -431,12 +428,10 @@
               } else {
                 feedback.className = 'feedback incorrect';
                 feedback.style.display = 'block';
-                // Find explanation for selected choice if present
                 const sel = data.choices.find(choice => choice.key === selected);
                 const explanation = sel && sel.explain ? sel.explain : 'Incorrect.';
                 feedback.textContent = explanation + ' The correct (legal/dictionary) meaning is: "' + data.correct + '".';
               }
-              // disable further changes to this question
               const inputs = container.querySelectorAll('input[type="radio"]');
               inputs.forEach(r => r.disabled = true);
             });
@@ -451,7 +446,6 @@
       document.addEventListener('DOMContentLoaded', function () {
         build();
         document.getElementById('resetBtn').addEventListener('click', function () {
-          // clear selections and feedback then rebuild (reshuffle)
           document.querySelectorAll('input[type="radio"]').forEach(i => { i.checked = false; i.disabled = false; });
           document.querySelectorAll('.feedback').forEach(f => { f.style.display = 'none'; f.className = 'feedback'; f.textContent = ''; });
           build();
