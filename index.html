@@ -1,22 +1,638 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Interactive Quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English Arbitration Law - Vocabulary</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; max-width: 980px; margin: 2rem auto; line-height: 1.5; color:#111; padding:0 1rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .question { border: 1px solid #e6edf3; padding: 1rem; border-radius: 8px; margin: 1rem 0; background:#fbfdff; }
+    .q-head { display:flex; gap:1rem; align-items:flex-start; margin-bottom:0.5rem; }
+    .q-num { font-weight:700; color:#0b79d0; min-width:28px; }
+    .choices { display:flex; flex-direction:column; gap:0.45rem; }
+    .choice { display:flex; align-items:center; gap:0.6rem; padding:0.5rem; border-radius:6px; cursor:pointer; border:1px solid transparent; }
+    .choice:hover { background:#f1f7fb; }
+    input[type="radio"] { accent-color:#0b79d0; }
+    .feedback { margin-top:0.6rem; padding:0.6rem; border-radius:6px; display:none; }
+    .correct { background:#ecfdf5; border:1px solid #bbf7d0; color:#064e3b; }
+    .incorrect { background:#fff1f2; border:1px solid #fecaca; color:#7f1d1d; }
+    button.reset { margin-top:1rem; background:#0b79d0; color:#fff; border:none; padding:0.6rem 0.9rem; border-radius:6px; cursor:pointer; }
+    footer { margin-top:1.25rem; color:#666; font-size:0.9rem; }
+  </style>
 </head>
 <body>
-  <h1>HTML Basics Quiz</h1>
-  <form id="quiz-form">
-    <div>
-      <p>1. What does HTML stand for?</p>
-      <input type="radio" name="q1" value="a"> Home Tool Markup Language<br>
-      <input type="radio" name="q1" value="b"> HyperText Markup Language<br>
-      <input type="radio" name="q1" value="c"> Hyperlink Text Management Language<br>
-    </div>
-    <button type="button" onclick="submitQuiz()">Submit</button>
-  </form>
-  <div id="result"></div>
+  <h1>English Arbitration Law - Vocabulary</h1>
 
-  <script src="script.js"></script>
+  <form id="quiz" autocomplete="off" onsubmit="return false;">
+    <!-- 1 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">1.</div>
+        <div>What does "seat of arbitration" mean?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 2 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">2.</div>
+        <div>What is an "arbitral tribunal"?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 3 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">3.</div>
+        <div>What does "award" mean in arbitration context?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 4 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">4.</div>
+        <div>What does "jurisdiction" refer to?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 5 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">5.</div>
+        <div>What is a "submission agreement"?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 6 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">6.</div>
+        <div>What does "recusal" mean regarding arbitrators?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 7 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">7.</div>
+        <div>What is "confidentiality" in arbitration?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 8 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">8.</div>
+        <div>What does "stay of proceedings" mean?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 9 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">9.</div>
+        <div>What is "enforcement" of an arbitral award?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 10 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">10.</div>
+        <div>What does "seat" differ from "venue" mean in arbitration?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 11 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">11.</div>
+        <div>What does "lex arbitri" denote?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 12 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">12.</div>
+        <div>What is an "injunction" in the arbitration/litigation context?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 13 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">13.</div>
+        <div>What does "party autonomy" mean in arbitration?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 14 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">14.</div>
+        <div>What is "manifest disregard" (as used in some arbitration contexts)?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 15 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">15.</div>
+        <div>What does "ad hoc arbitration" mean?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 16 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">16.</div>
+        <div>What is a "tribunal secretary" or "arbitral secretary"?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 17 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">17.</div>
+        <div>What does "costs" typically include in arbitration?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 18 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">18.</div>
+        <div>What is an "expert determination" as distinct from arbitration?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 19 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">19.</div>
+        <div>What does "procedural order" mean in arbitration?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <!-- 20 -->
+    <div class="question">
+      <div class="q-head">
+        <div class="q-num">20.</div>
+        <div>What does "set-aside" mean regarding an arbitral award?</div>
+      </div>
+      <div class="choices"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+
+    <button type="button" class="reset" id="resetBtn">Randomise answers again</button>
+  </form>
+
+  <footer>
+    <strong>Notes</strong>: Questions are fixed; the four answer choices for each question are shuffled each time the page loads or you press "Randomise answers again".
+  </footer>
+
+  <script>
+    (function () {
+      const questionsData = [
+        // 1 seat of arbitration
+        {
+          correct: "seat of arbitration",
+          choices: [
+            { text: "the legal jurisdiction whose law governs the arbitration", key: "SEAT" },
+            { text: "the physical room where hearings take place", key: "ROOM" },
+            { text: "the organisation administering the arbitration", key: "ADMIN" },
+            { text: "the party who initiated arbitration", key: "CLAIMANT" }
+          ],
+          incorrectExplanations: {
+            "ROOM": "Incorrect. The physical hearing place is the venue; the seat indicates the legal place and applicable procedural law.",
+            "ADMIN": "Incorrect. An administering institution is different from the seat, which determines governing law of proceedings.",
+            "CLAIMANT": "Incorrect. The seat is not a party but the legal jurisdiction governing arbitration."
+          }
+        },
+
+        // 2 arbitral tribunal
+        {
+          correct: "arbitral tribunal",
+          choices: [
+            { text: "the panel of one or more arbitrators hearing the dispute", key: "TRIBUNAL" },
+            { text: "a government court supervising arbitration", key: "COURT" },
+            { text: "the contract clause requiring arbitration", key: "CLAUSE" },
+            { text: "a database of past awards", key: "DATABASE" }
+          ],
+          incorrectExplanations: {
+            "COURT": "Incorrect. A court is separate; the arbitral tribunal is constituted by arbitrators who decide the dispute.",
+            "CLAUSE": "Incorrect. The clause is the arbitration agreement, not the decision-makers.",
+            "DATABASE": "Incorrect. A repository of awards is unrelated to the tribunal."
+          }
+        },
+
+        // 3 award
+        {
+          correct: "award",
+          choices: [
+            { text: "the final decision of the arbitral tribunal resolving the dispute", key: "AWARD" },
+            { text: "a financial guarantee provided by a party", key: "GUARANTEE" },
+            { text: "an interim procedural direction", key: "DIRECTION" },
+            { text: "a settlement offer from one party", key: "OFFER" }
+          ],
+          incorrectExplanations: {
+            "GUARANTEE": "Incorrect. An award is the tribunal's determination, not a financial guarantee.",
+            "DIRECTION": "Incorrect. Interim directions differ from a final award.",
+            "OFFER": "Incorrect. An award is binding and issued by the tribunal, not a party's offer."
+          }
+        },
+
+        // 4 jurisdiction
+        {
+          correct: "jurisdiction",
+          choices: [
+            { text: "the legal authority to decide a dispute", key: "JURISDICTION" },
+            { text: "the nationality of the parties", key: "NATIONALITY" },
+            { text: "the monetary value of the claim", key: "VALUE" },
+            { text: "the venue's seating capacity", key: "CAPACITY" }
+          ],
+          incorrectExplanations: {
+            "NATIONALITY": "Incorrect. Jurisdiction concerns legal power, not parties' nationality.",
+            "VALUE": "Incorrect. Jurisdiction is not the claim's monetary amount.",
+            "CAPACITY": "Incorrect. It's unrelated to seating or physical capacity."
+          }
+        },
+
+        // 5 submission agreement
+        {
+          correct: "submission agreement",
+          choices: [
+            { text: "an agreement to submit a specific dispute to arbitration", key: "SUBMISSION AGREEMENT" },
+            { text: "a clause excluding arbitration", key: "EXCLUSION" },
+            { text: "a document submitting evidence to court", key: "EVIDENCE" },
+            { text: "an agreement to appeal an award", key: "APPEAL AGREEMENT" }
+          ],
+          incorrectExplanations: {
+            "EXCLUSION": "Incorrect. A submission agreement sends a dispute to arbitration rather than excluding it.",
+            "EVIDENCE": "Incorrect. It is not a mere evidential filing.",
+            "APPEAL AGREEMENT": "Incorrect. Arbitration awards are generally final; a submission agreement concerns the referral to arbitration."
+          }
+        },
+
+        // 6 recusal
+        {
+          correct: "recusal",
+          choices: [
+            { text: "the act of an arbitrator withdrawing due to conflict of interest", key: "RECUSAL" },
+            { text: "a party rejecting an award", key: "REJECTION" },
+            { text: "the tribunal dismissing a claim", key: "DISMISSAL" },
+            { text: "a court enforcing an award", key: "ENFORCEMENT" }
+          ],
+          incorrectExplanations: {
+            "REJECTION": "Incorrect. Recusal is an arbitrator stepping aside, not a party rejecting an award.",
+            "DISMISSAL": "Incorrect. It is distinct from dismissing a claim on merits.",
+            "ENFORCEMENT": "Incorrect. Recusal relates to impartiality, not enforcement."
+          }
+        },
+
+        // 7 confidentiality
+        {
+          correct: "confidentiality",
+          choices: [
+            { text: "the obligation to keep arbitration-related information private", key: "CONFIDENTIALITY" },
+            { text: "a tribunal's power to order production of documents", key: "PRODUCTION" },
+            { text: "the court's public hearing requirement", key: "PUBLIC HEARING" },
+            { text: "a party's right to publish the award", key: "PUBLISH RIGHT" }
+          ],
+          incorrectExplanations: {
+            "PRODUCTION": "Incorrect. Production is disclosure of documents; confidentiality is about keeping information private.",
+            "PUBLIC HEARING": "Incorrect. Confidentiality is antithetical to mandatory public hearings.",
+            "PUBLISH RIGHT": "Incorrect. Confidentiality restricts publication, not creates a right to publish."
+          }
+        },
+
+        // 8 stay of proceedings
+        {
+          correct: "stay of proceedings",
+          choices: [
+            { text: "a court order suspending court proceedings, often pending arbitration", key: "STAY" },
+            { text: "a decision ordering immediate trial", key: "TRIAL ORDER" },
+            { text: "a tribunal's final award", key: "AWARD" },
+            { text: "a party's admission of liability", key: "ADMISSION" }
+          ],
+          incorrectExplanations: {
+            "TRIAL ORDER": "Incorrect. A stay suspends, rather than orders, proceedings.",
+            "AWARD": "Incorrect. A stay is procedural, not a substantive award.",
+            "ADMISSION": "Incorrect. It is unrelated to a party admitting liability."
+          }
+        },
+
+        // 9 enforcement
+        {
+          correct: "enforcement",
+          choices: [
+            { text: "the process of obtaining recognition and execution of an award by courts", key: "ENFORCEMENT" },
+            { text: "the tribunal's internal administrative process", key: "ADMIN PROCESS" },
+            { text: "a party's voluntary compliance only", key: "VOLUNTARY" },
+            { text: "the termination of an arbitration clause", key: "TERMINATION" }
+          ],
+          incorrectExplanations: {
+            "ADMIN PROCESS": "Incorrect. Enforcement is judicial recognition and execution, not internal admin.",
+            "VOLUNTARY": "Incorrect. Enforcement involves court mechanisms beyond voluntary compliance.",
+            "TERMINATION": "Incorrect. It does not refer to ending a clause."
+          }
+        },
+
+        // 10 seat vs venue
+        {
+          correct: "seat vs venue",
+          choices: [
+            { text: "seat is the legal place governing law; venue is the physical location of hearings", key: "SEAT VS VENUE" },
+            { text: "seat means the tribunal's chairs; venue means timetable", key: "CHAIRS" },
+            { text: "seat is the language of proceedings; venue is the currency used", key: "LANG/CURRENCY" },
+            { text: "seat is the arbitration institution; venue is the claimant", key: "INSTITUTION" }
+          ],
+          incorrectExplanations: {
+            "CHAIRS": "Incorrect. Seat is a legal concept, not literal furniture.",
+            "LANG/CURRENCY": "Incorrect. Seat does not denote language or currency.",
+            "INSTITUTION": "Incorrect. The seat is not the institution administering the arbitration."
+          }
+        },
+
+        // 11 lex arbitri
+        {
+          correct: "lex arbitri",
+          choices: [
+            { text: "the law of the seat that governs procedural aspects of arbitration", key: "LEX ARBITRI" },
+            { text: "the contractual law chosen by the parties for merits", key: "MERITS LAW" },
+            { text: "an international convention on evidence", key: "CONVENTION" },
+            { text: "a tribunal's code of ethics", key: "ETHICS" }
+          ],
+          incorrectExplanations: {
+            "MERITS LAW": "Incorrect. Lex arbitri concerns procedural law at the seat, not the law governing contract merits.",
+            "CONVENTION": "Incorrect. It is not an international convention but domestic law of the seat.",
+            "ETHICS": "Incorrect. Lex arbitri is statutory/regulatory, not merely a code of ethics."
+          }
+        },
+
+        // 12 injunction
+        {
+          correct: "injunction",
+          choices: [
+            { text: "a court order requiring a party to do or refrain from doing something", key: "INJUNCTION" },
+            { text: "a tribunal's final money award", key: "MONEY AWARD" },
+            { text: "a procedural timetable", key: "TIMETABLE" },
+            { text: "a form of mediation", key: "MEDIATION" }
+          ],
+          incorrectExplanations: {
+            "MONEY AWARD": "Incorrect. An injunction is equitable relief ordering action or restraint, not monetary compensation.",
+            "TIMETABLE": "Incorrect. It is a substantive interim remedy, not simply a schedule.",
+            "MEDIATION": "Incorrect. It is a judicial remedy, not mediation."
+          }
+        },
+
+        // 13 party autonomy
+        {
+          correct: "party autonomy",
+          choices: [
+            { text: "the principle that parties can agree on procedural and substantive aspects of arbitration", key: "PARTY AUTONOMY" },
+            { text: "a tribunal's exclusive right to set procedure", key: "TRIBUNAL RIGHT" },
+            { text: "a party's right to avoid arbitration", key: "AVOIDANCE" },
+            { text: "a statutory restriction on agreements", key: "STATUTORY" }
+          ],
+          incorrectExplanations: {
+            "TRIBUNAL RIGHT": "Incorrect. Party autonomy emphasises party choices, not tribunal control.",
+            "AVOIDANCE": "Incorrect. It does not signify a right to avoid arbitration.",
+            "STATUTORY": "Incorrect. It is a contractual principle, not a restriction."
+          }
+        },
+
+        // 14 manifest disregard
+        {
+          correct: "manifest disregard",
+          choices: [
+            { text: "a doctrine alleging that the tribunal wilfully ignored clearly applicable law", key: "MANIFEST DISREGARD" },
+            { text: "a tribunal's deliberate late scheduling of hearings", key: "LATE SCHEDULING" },
+            { text: "a party's failure to submit documents", key: "FAIL DOCUMENTS" },
+            { text: "an award published without redactions", key: "PUBLISH" }
+          ],
+          incorrectExplanations: {
+            "LATE SCHEDULING": "Incorrect. Manifest disregard concerns ignoring law, not scheduling.",
+            "FAIL DOCUMENTS": "Incorrect. It is about tribunal conduct with law, not document submission by parties.",
+            "PUBLISH": "Incorrect. It does not relate to publication practices."
+          }
+        },
+
+        // 15 ad hoc arbitration
+        {
+          correct: "ad hoc arbitration",
+          choices: [
+            { text: "arbitration organised by the parties without institutional administration", key: "AD HOC" },
+            { text: "arbitration administered by a major arbitral institution", key: "INSTITUTIONAL" },
+            { text: "arbitration limited to employment disputes", key: "EMPLOYMENT" },
+            { text: "arbitration that automatically goes to court", key: "COURT BOUND" }
+          ],
+          incorrectExplanations: {
+            "INSTITUTIONAL": "Incorrect. Ad hoc is the opposite of institutional administration.",
+            "EMPLOYMENT": "Incorrect. It is not limited to a particular subject matter.",
+            "COURT BOUND": "Incorrect. Ad hoc arbitration is controlled by the parties, not automatically routed to courts."
+          }
+        },
+
+        // 16 tribunal secretary
+        {
+          correct: "tribunal secretary",
+          choices: [
+            { text: "a person assisting the tribunal with administrative and procedural tasks", key: "SECRETARY" },
+            { text: "the party representing the claimant", key: "CLAIMANT REP" },
+            { text: "a witness providing testimony", key: "WITNESS" },
+            { text: "a judge supervising the tribunal", key: "SUPERVISING JUDGE" }
+          ],
+          incorrectExplanations: {
+            "CLAIMANT REP": "Incorrect. The secretary assists all tribunal members, not a specific party.",
+            "WITNESS": "Incorrect. A secretary is administrative, not a factual witness.",
+            "SUPERVISING JUDGE": "Incorrect. A tribunal secretary is not a judge."
+          }
+        },
+
+        // 17 costs
+        {
+          correct: "costs",
+          choices: [
+            { text: "the arbitration expenses, including tribunal fees, legal fees and administrative costs", key: "COSTS" },
+            { text: "only the tribunal's travel expenses", key: "TRAVEL" },
+            { text: "the claimant's lost profits", key: "LOST PROFITS" },
+            { text: "penalties imposed by statute", key: "PENALTIES" }
+          ],
+          incorrectExplanations: {
+            "TRAVEL": "Incorrect. Costs encompass a wider range including legal fees, not just travel.",
+            "LOST PROFITS": "Incorrect. Lost profits are damages, not the procedural costs of arbitration.",
+            "PENALTIES": "Incorrect. Costs are transactional and fee-related, not statutory fines."
+          }
+        },
+
+        // 18 expert determination
+        {
+          correct: "expert determination",
+          choices: [
+            { text: "a process where an expert decides a technical issue, usually binding or non-binding as agreed", key: "EXPERT DETERMINATION" },
+            { text: "a tribunal composed only of judges", key: "JUDICIAL TRIBUNAL" },
+            { text: "arbitration limited to international trade", key: "TRADE ARBITRATION" },
+            { text: "court mediation supervised by an expert", key: "COURT MEDIATION" }
+          ],
+          incorrectExplanations: {
+            "JUDICIAL TRIBUNAL": "Incorrect. Expert determination uses a subject-matter expert, not judges.",
+            "TRADE ARBITRATION": "Incorrect. It is a separate dispute-resolution method, not limited to trade only.",
+            "COURT MEDIATION": "Incorrect. Expert determination is distinct from court-facilitated mediation."
+          }
+        },
+
+        // 19 procedural order
+        {
+          correct: "procedural order",
+          choices: [
+            { text: "a written direction by the tribunal on procedure or case management", key: "PROCEDURAL ORDER" },
+            { text: "a statutory law governing arbitration", key: "STATUTE" },
+            { text: "the final award expressed in a single sentence", key: "FINAL SENTENCE" },
+            { text: "a party's confidential witness statement", key: "WITNESS STATEMENT" }
+          ],
+          incorrectExplanations: {
+            "STATUTE": "Incorrect. A procedural order is tribunal-made guidance, not primary legislation.",
+            "FINAL SENTENCE": "Incorrect. It is interim or procedural directions, not the final determination.",
+            "WITNESS STATEMENT": "Incorrect. A witness statement is evidence, not a tribunal order."
+          }
+        },
+
+        // 20 set-aside
+        {
+          correct: "set-aside",
+          choices: [
+            { text: "a court procedure to annul or quash an arbitral award", key: "SET-ASIDE" },
+            { text: "a party reserving funds for costs", key: "RESERVE FUNDS" },
+            { text: "an award sent for enforcement abroad", key: "ENFORCE ABROAD" },
+            { text: "a tribunal postponing its award", key: "POSTPONE AWARD" }
+          ],
+          incorrectExplanations: {
+            "RESERVE FUNDS": "Incorrect. Set-aside is a judicial annulment of an award, not financial reservation.",
+            "ENFORCE ABROAD": "Incorrect. That refers to enforcement, not annulment.",
+            "POSTPONE AWARD": "Incorrect. Set-aside is an action after issuance, not postponement by the tribunal."
+          }
+        }
+      ];
+
+      function uid(len = 8) {
+        return Math.random().toString(36).slice(2, 2 + len);
+      }
+
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      function build() {
+        const qEls = Array.from(document.querySelectorAll('.question'));
+        qEls.forEach((qEl, idx) => {
+          const data = questionsData[idx];
+          const container = qEl.querySelector('.choices');
+          const feedback = qEl.querySelector('.feedback');
+          container.innerHTML = '';
+
+          const choices = data.choices.map(c => ({ ...c }));
+          shuffle(choices);
+
+          const group = 'q_' + idx + '_' + uid(6);
+
+          choices.forEach((choice, i) => {
+            const id = group + '_opt' + i;
+            const label = document.createElement('label');
+            label.className = 'choice';
+            label.setAttribute('for', id);
+
+            const input = document.createElement('input');
+            input.type = 'radio';
+            input.name = group;
+            input.id = id;
+            input.value = choice.key;
+
+            const span = document.createElement('span');
+            span.textContent = choice.text;
+
+            label.appendChild(input);
+            label.appendChild(span);
+            container.appendChild(label);
+
+            input.addEventListener('change', function () {
+              const selected = this.value;
+              const correctKey = data.correct.replace(/\s+/g, ' ').trim().toUpperCase();
+              if (selected.toUpperCase() === correctKey) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Correct.';
+              } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                const expl = (data.incorrectExplanations && data.incorrectExplanations[selected]) ? data.incorrectExplanations[selected] : 'Incorrect.';
+                feedback.textContent = expl + ' The correct meaning is: "' + data.correct.toLowerCase() + '".';
+              }
+              const inputs = container.querySelectorAll('input[type="radio"]');
+              inputs.forEach(r => r.disabled = true);
+            });
+          });
+
+          feedback.style.display = 'none';
+          feedback.className = 'feedback';
+          feedback.textContent = '';
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        build();
+        document.getElementById('resetBtn').addEventListener('click', function () {
+          document.querySelectorAll('input[type="radio"]').forEach(i => { i.checked = false; i.disabled = false; });
+          document.querySelectorAll('.feedback').forEach(f => { f.style.display = 'none'; f.className = 'feedback'; f.textContent = ''; });
+          build();
+          document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
